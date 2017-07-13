@@ -1,0 +1,22 @@
+//Color
+
+//red-color
+$active_red_color_scheme: darken(rgb(196, 74, 53), 15%);
+$red_color_scheme: rgb(196, 74, 53);
+
+//blue-color
+$active_blue_color_scheme: darken(rgb(68, 194, 233), 15%);
+$blue_color_scheme: rgb(68, 194, 233);
+
+//home-color
+$active_home_color_scheme: rgb(242, 108, 28);
+$home_color_scheme:rgb(178, 209, 45);
+
+//select-color
+$color_scheme: $home_color_scheme;
+$active_color_scheme: $active_home_color_scheme;
+
+
+//Font-Family
+$Lato: 'Lato', sans-serif;
+$MPR: 'MyriadPro-Regular', sans-serif;
