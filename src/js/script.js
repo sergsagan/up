@@ -1,8 +1,38 @@
 $(function() {
 	
     $("head").append("<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' />");
-	
-	//anchor links
+
+    $( ".type" ).select2({
+        placeholder: "Any",
+        allowClear: true
+    });
+
+    $( ".location" ).select2({
+        placeholder: "Any",
+        allowClear: true
+    });
+
+    $( ".status" ).select2({
+        placeholder: "Any",
+        allowClear: true
+    });
+
+    $( ".beds" ).select2({
+        placeholder: "Any",
+        allowClear: true
+    });
+
+    $( ".baths" ).select2({
+        placeholder: "Any",
+        allowClear: true
+    });
+
+    $( ".area" ).select2({
+        placeholder: "Any",
+        allowClear: true
+    });
+
+    //anchor links
 	
 	$(".navbar-nav").on("click","a", function (event) {
 		event.preventDefault();
@@ -55,36 +85,74 @@ $(function() {
 			}
 		);
 	});
-	
-	//change
-	$('.form-of-training .order-form').click(function() {
-		$('.form-of-training').find(".name, .price, .price .rub").removeClass("active");
-		$(this).parents('.form-of-training').find(".name").toggleClass("active").fadeIn(400);
-		$(this).parents('.form-of-training').find(".price, .price .rub").toggleClass("active").fadeIn(400);
-	});
-	
-	$('.practices .order-form').click(function() {
-		$('.practices').find(".name, .price, .price .rub").removeClass("active");
-		$(this).parents('.practices').find(".name").toggleClass("active").fadeIn(400);
-		$(this).parents('.practices').find(".price, .price .rub").toggleClass("active").fadeIn(400);
-	});
-	
-	$('.course .order-form').click(function() {
-		$('.course').find(".name, .price, .price .rub").removeClass("active");
-		$(this).parents('.course').find(".name").toggleClass("active").fadeIn(400);
-		$(this).parents('.course').find(".price, .price .rub").toggleClass("active").fadeIn(400);
-	});
-	
-	new WOW().init();
-    
+
+    //ion.rangeslider
+
+    var $range = $(".range_slider"),
+        $min = $(".min-price"),
+        $max = $(".max-price"),
+        ionValues = function(data) {
+            $min.text('$' + data.from);
+            $max.text('$' + data.to);
+        };
+
+    $range.ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 1000000,
+        from: 200000,
+        to: 500000,
+        hide_from_to: true,
+        hide_min_max: false,
+        onStart: ionValues,
+        onChange: ionValues
+    });
+
+
+    $('select').styler();
+
+    //language-select
+
+    $('.language-select').click(function(){
+        $(this).toggleClass('open');
+    });
+
+    $('.language-select li').click(function(){
+        var setLang = $('.language-select').data('location'),
+            dataLangSelect = $(this).data('lang');
+        $('.language-select').data('location', dataLangSelect);
+        $('.language-select li').removeClass('active');
+        $(this).toggleClass('active');
+    });
+
+    //currency-select
+
+    $('.currency-select').click(function(){
+        $(this).toggleClass('open');
+    });
+
+    $('.currency-select li').click(function(){
+        var setLang = $('.currency-select').data('location'),
+            dataLangSelect = $(this).data('currency');
+        $('.currency-select').data('location', dataLangSelect);
+        $('.currency-select li').removeClass('active');
+        $(this).toggleClass('active');
+    });
     
     $('.fade').slick({
         speed: 500,
         fade: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
         cssEase: 'linear'
     });
 
-    $('.responsive').slick({
+
+
+
+
+    /*$('.responsive').slick({
         dots: true,
         arrows: false,
         infinite: false,
@@ -120,34 +188,11 @@ $(function() {
             // settings: "unslick"
             // instead of a settings object
         ]
-    });
+    });*/
     
 
     $("#phone").mask("+38 (999) 999-99-99");
-	
-	var today = new Date(),
-		ts = new Date( today.getFullYear(), today.getMonth(), today.getDate() + 7),
-		newYear = true;
-	
-	$('#countdown').countdown({
-		timestamp	: ts,
-		callback	: function(days, hours, minutes, seconds){
-			
-			var message = "";
-			
-			message += days + " <i>дней</i> " + ( days==1 ? '':'' ) + "";
-			message += hours + "" + ( hours==1 ? '':':' ) + "";
-			message += minutes + "" + ( minutes==1 ? '':':' ) + "";
-			message += seconds + " " + ( seconds==1 ? '':' ' ) + " ";
-			
-			if(newYear){
-				message += "";
-			}
-			else {
-				message += "";
-			}
-		}
-	});
+
 
     
     //Аякс отправка форм

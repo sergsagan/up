@@ -1,1 +1,19 @@
+.btn__find{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 30px;
+  width: 160px;
+  height: 38px;
+  background-color: $active_color_scheme;
+  color: #ffffff;
+  font-family: $Lato;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  @include transition(all .5s);
 
+  &:hover{
+    background-color: darken($active_color_scheme, 10%);
+  }
+}

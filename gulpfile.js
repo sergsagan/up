@@ -159,6 +159,10 @@ gulp.task('styles:vendor', function() {
 
               "jquery.form-styler": {
                   "main": "./dist/jquery.formstyler.css"
+              },
+
+              "select2":{
+                  "main": "./dist/css/select2.css"
               }
           }
   }))
@@ -214,6 +218,10 @@ gulp.task('js:vendor', function() {
 
               "readmore-js": {
                   "main": "./readmore.js"
+              },
+
+              "select2":{
+                  "main": "./dist/js/select2.min.js"
               }
           }
   }))
