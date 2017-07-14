@@ -838,7 +838,6 @@
             border-radius: 16px;
             -moz-border-radius: 16px;
           }
-
           .irs-bar {
             height: 10px;
             top: 33px;
@@ -863,11 +862,9 @@
           .sl-wrap {
             margin-top: -25px;
           }
-
           .price {
             display: inline-block;
           }
-
           .min-price{
             display: inline-block;
             width: 65px;
@@ -882,7 +879,6 @@
             padding: 0 5px;
             margin-right: 10px;
           }
-
           .max-price{
             display: inline-block;
             width: 65px;
@@ -900,10 +896,10 @@
 
         &__type-mini{
           margin-bottom: 10px;
-          width: 160px;
+          width: 46%;
           display: inline-block;
           vertical-align: top;
-          margin-right: 23px;
+          margin-right: 20px;
 
           &:last-child{
             margin-right: 0;
