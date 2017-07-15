@@ -465,6 +465,182 @@
     background-color: #353f45;
     z-index: 999;
   }
+  nav.active{
+    background-color: $color_scheme;
+  }
+
+  //mobile-menu
+
+  #menu {
+    display: none;
+    list-style: none;
+    z-index: 150;
+
+    li{
+      display: block;
+
+      a{
+        font-family: $Lato;
+        font-size: 14px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        text-decoration: none;
+        z-index: 2;
+        cursor: pointer;
+
+        &:hover{
+          color: $color_scheme;
+        }
+      }
+      .submenu {
+        position: relative;
+        width: 100%;;
+        z-index: 1000;
+        background-color: #283136;
+        padding: 10px 0;
+
+
+        li{
+          display: block;
+          text-align: left;
+          padding: 5px 25px;
+
+          &:before{
+            display: none;
+          }
+          a{
+            color: rgb(147, 155, 160);
+            font-family: $Lato;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            padding: 5px 0;
+            text-transform: none;
+            border-bottom:1px solid rgba(255, 255, 255, 0.1);
+
+            &:hover{
+              color: $color_scheme;
+            }
+          }
+        }
+      }
+    }
+
+    li.open{
+      a{
+        color: $color_scheme;
+      }
+    }
+  }
+  #menu-toggle{
+    display: none;
+  }
+
+
+  #menu li,
+  #menu li a {
+    display: block;
+    line-height: 1;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  #menu ul {
+    display: none;
+  }
+
+  #menu > li > a {
+    padding: 15px 0;
+    border-bottom:1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  #menu li.last .submit-mobile{
+    display: block;
+    width: 275px;
+    height: 50px;
+    line-height: 20px;
+    background-color: $color_scheme;
+    color: #ffffff;
+    font-family: $Lato;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin: 15px auto 0;
+    @include transition(all .5s);
+
+    &:hover{
+      background-color: $active_color_scheme;
+    }
+  }
+
+  #menu > li.last > a {
+    padding: 15px 0;
+    border-bottom:0;
+  }
+
+  #menu > li.open > a {
+    border-bottom:1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  #menu ul li.has-sub > a:after {
+    display: none;
+  }
+
+  /*Change toggle size by adjusting width & height*/
+  .tb-menu-toggle {
+    border: 0;
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  /*Change toggle color here*/
+  .tb-menu-toggle i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    -webkit-transition:all .2s;
+    -moz-transition:all .2s;
+    -o-transition:all .2s;
+    transition:all .2s;
+  }
+  .tb-menu-toggle i:nth-child(2) {
+    top: 40%;
+  }
+  .tb-menu-toggle i:nth-child(3) {
+    top: 80%;
+  }
+
+  /* Style the active toggle here */
+  .tb-menu-toggle.tb-active-toggle i {  }
+
+  /*Animation of the toggle*/
+  .tb-menu-toggle.tb-animate-toggle i:first-child,
+  .tb-menu-toggle.tb-animate-toggle i:nth-child(2){
+    top: 40%;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+  .tb-menu-toggle.tb-animate-toggle i:nth-child(3){
+    top: 40%;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+  }
+
+  //desktop menu
 
   &__menu{
     display: flex;
